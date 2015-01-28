@@ -1,6 +1,13 @@
 <h1>Bookmarkr Tutorial with Anna</h1>
 
-<% @bookmarks.each do |bookmark| %>
-  <p><%= bookmark.url %></p>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <% if bookmark.favorite %> * <% end %>
+      <!-- link_to is just a method included with Rails and takes the clickable text and actual url as the 2nd arg -->
+      <%= link_to bookmark.title, bookmark.url %>
+      <%= bookmark.comment %>
+    </li>
 
-<% end %>
+  <% end %>
+</ul>
