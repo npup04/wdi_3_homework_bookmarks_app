@@ -1,0 +1,15 @@
+<h1>Bookmarkr Tutorial with Anna</h1>
+
+<h3><%= link_to @bookmark.title, @bookmark.url %></h3>
+
+<p>
+  <%= @bookmark.comment %>
+</p>
+
+<p>
+  <% if @bookmark.favorite %>
+    (Favorited!)
+  <% end %>
+</p>
+
+<p><%= link_to "All Bookmarks", bookmarks_path %></p>

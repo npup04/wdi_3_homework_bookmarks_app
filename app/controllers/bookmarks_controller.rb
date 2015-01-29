@@ -5,6 +5,10 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
   end
 
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
   def new
     #used as an empty placeholder object in the html form
     # this object does not yet exist in the database
