@@ -1,0 +1,18 @@
+#form_for method, this method takes the arg of @bookmark
+<%= form_for @bookmark do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+
+  <%= f.label :favorite %>
+  <%= f.check_box :favorite %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to All Bookmarks", root_path %>

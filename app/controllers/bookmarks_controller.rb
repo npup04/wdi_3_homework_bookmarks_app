@@ -4,4 +4,23 @@ class BookmarksController < ApplicationController
     # Bookmark.all runs SELECT * from bookmarks and is being saved in @bookmarks
     @bookmarks = Bookmark.all
   end
+
+  def new
+    #used as an empty placeholder object in the html form
+    # this object does not yet exist in the database
+    @bookmark = Bookmark.new
+  end
+
+  def create
+    @bookmark = Bookmark.create(bookmark_params) #now this object is saved to the database
+    #redirect method, takes a hash as an argument where action: is the key and :index is the value
+    # redirect to the index controller action in order to display list of all bookmarks
+    redirect_to action: :index
+  end
+
+  private
+  def bookmark_params
+    #of the entire params hash, always return everything for the key, bookmark. then from that return value,  permit only certain attributes to be passed through
+    params.require(:bookmark).permit(:url, :title, :comment, :favorite)
+  end
 end
