@@ -7,8 +7,11 @@
       <!-- link_to is just a method included with Rails and takes the clickable text and actual url as the 2nd arg -->
       <%= link_to bookmark.title, bookmark.url %>
       <%= bookmark.comment %>
+      <%= link_to "Edit", edit_bookmark_path(bookmark) %>
+      <%= link_to "Delete", bookmark_path(bookmark), method: :delete %>
     </li>
   <% end %>
 </ul>
 
 <%= link_to "Create New Bookmark", new_bookmark_path %>
+

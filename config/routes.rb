@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'bookmarks#index'
 
   #resources is a method that takes as arguments a sybmol (:bookmarks contoller) and which actions we want the paths to exist for (specify only new & create)
-  resources :bookmarks, only: [:new, :create]
+  resources :bookmarks, only: [:new, :create, :edit, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
